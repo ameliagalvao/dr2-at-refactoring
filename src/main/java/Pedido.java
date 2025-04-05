@@ -1,36 +1,31 @@
+import java.util.UUID;
+
 public class Pedido {
-    public String endereco;
-    public double peso;
-    public String tipoFrete;
-    public String destinatario;
+    private final String id;
+    private final Entrega entrega;
+    private final TipoFrete tipoFrete;
 
-    public double calcularFrete() {
-        if (tipoFrete.equals("EXP")) {
-            return peso * 1.5 + 10;
-        } else if (tipoFrete.equals("PAD")) {
-            return peso * 1.2;
-        } else if (tipoFrete.equals("ECO")) {
-            return peso * 1.1 - 5;
-        } else {
-            return 0;
+    public Pedido(Entrega entrega, TipoFrete tipoFrete) {
+        if (entrega == null) {
+            throw new IllegalArgumentException("Entrega não pode ser nula");
         }
-    }
-
-    public String gerarEtiqueta() {
-        return "Destinatário: " + destinatario + "\nEndereço: " + endereco + "\nValor do Frete: R$" + calcularFrete();
-    }
-
-    public String gerarResumoPedido() {
-        return "Pedido para " + destinatario + " com frete tipo " + tipoFrete + " no valor de R$" + calcularFrete();
-    }
-
-    public void aplicarFretePromocional() {
-        if (peso > 10) {
-            peso = peso - 1;
+        if (tipoFrete == null) {
+            throw new IllegalArgumentException("Tipo de frete inválido");
         }
+        this.id = UUID.randomUUID().toString();
+        this.entrega = entrega;
+        this.tipoFrete = tipoFrete;
     }
 
-    public boolean isFreteGratis() {
-        return tipoFrete.equals("ECO") && peso < 2;
+    public String getId() {
+        return id;
+    }
+
+    public Entrega getEntrega() {
+        return entrega;
+    }
+
+    public TipoFrete getTipoFrete() {
+        return tipoFrete;
     }
 }
