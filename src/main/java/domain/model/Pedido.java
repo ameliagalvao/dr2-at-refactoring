@@ -2,7 +2,7 @@ package domain.model;
 
 import java.util.UUID;
 
-public class Pedido {
+public final class Pedido {
     private final String id;
     private final Entrega entrega;
     private final TipoFrete tipoFrete;
