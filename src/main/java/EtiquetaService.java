@@ -23,7 +23,7 @@ public class EtiquetaService {
             double valorOriginal = calculadoraFrete.calcular(pedido.getEntrega());
             return promocaoFrete.aplicarDesconto(valorOriginal, pedido);
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao calcular frete: " + e.getMessage(), e);
+            throw new CalculoFreteException("Erro ao calcular o valor do frete com promoção", e);
         }
     }
 }
