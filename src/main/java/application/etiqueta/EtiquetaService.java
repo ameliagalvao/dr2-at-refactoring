@@ -1,5 +1,7 @@
 package application.etiqueta;
 
+import application.promocao.PromocaoFrete;
+import application.promocao.PromocaoFreteSemDesconto;
 import domain.frete.CalculadoraFrete;
 import domain.model.Pedido;
 import exception.CalculoFreteException;

@@ -1,5 +1,10 @@
 package domain.model;
 
+import domain.frete.CalculadoraFrete;
+import domain.frete.FreteEconomico;
+import domain.frete.FreteExpresso;
+import domain.frete.FretePadrao;
+
 public enum TipoFrete {
     EXPRESSO(new FreteExpresso()),
     PADRAO(new FretePadrao()),
