@@ -1,3 +1,11 @@
+package application.etiqueta;
+
+import application.promocao.PromocaoFreteSemDesconto;
+import domain.frete.FretePadrao;
+import domain.model.Entrega;
+import domain.model.Pedido;
+import domain.model.TipoFrete;
+import exception.CalculoFreteException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertThrows;

@@ -1,3 +1,5 @@
+package domain.model;
+
 public enum TipoFrete {
     EXPRESSO(new FreteExpresso()),
     PADRAO(new FretePadrao()),

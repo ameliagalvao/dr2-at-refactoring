@@ -1,3 +1,7 @@
+package domain.frete;
+
+import domain.model.Entrega;
+
 public class FreteExpresso implements CalculadoraFrete {
     private static final double MULTIPLICADOR_PESO = 1.5;
     private static final double TAXA_FIXA = 10.0;

@@ -1,3 +1,8 @@
+package application.resumo;
+
+import domain.model.Entrega;
+import domain.model.Pedido;
+import domain.model.TipoFrete;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -12,7 +17,7 @@ public class ResumoPedidoServiceTest {
         ResumoPedidoService service = new ResumoPedidoService();
         String resumo = service.gerarResumo(pedido, 15.0);
 
-        assertTrue(resumo.contains("Pedido para Pedro"));
+        assertTrue(resumo.contains("domain.model.Pedido para Pedro"));
         assertTrue(resumo.contains("no valor de R$15.0"));
     }
 }

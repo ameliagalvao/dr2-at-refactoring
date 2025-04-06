@@ -1,3 +1,8 @@
+package application.promocao;
+
+import domain.model.Pedido;
+import domain.model.TipoFrete;
+
 public class PromocaoFreteGratis implements PromocaoFrete {
     private static final double LIMITE_PESO = 2.0;
     private static final double FRETE_GRATIS = 0.0;

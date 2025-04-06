@@ -1,3 +1,5 @@
+package domain.model;
+
 import java.util.UUID;
 
 public class Pedido {
@@ -13,7 +15,7 @@ public class Pedido {
 
     public static Resultado<Pedido> criar(Entrega entrega, TipoFrete tipoFrete) {
         if (entrega == null) {
-            return Resultado.erro("Entrega não pode ser nula");
+            return Resultado.erro("domain.model.Entrega não pode ser nula");
         }
         if (tipoFrete == null) {
             return Resultado.erro("Tipo de frete inválido");

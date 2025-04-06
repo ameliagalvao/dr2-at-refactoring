@@ -1,3 +1,5 @@
+package domain.model;
+
 public class Resultado<T> {
     private final T valor;
     private final String erro;

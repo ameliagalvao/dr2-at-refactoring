@@ -1,3 +1,7 @@
+package domain.frete;
+
+import domain.model.Entrega;
+
 public class FreteEconomico implements CalculadoraFrete {
     private static final double MULTIPLICADOR_PESO = 1.1;
     private static final double DESCONTO_FIXO = 5.0;

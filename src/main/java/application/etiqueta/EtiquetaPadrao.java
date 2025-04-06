@@ -1,3 +1,7 @@
+package application.etiqueta;
+
+import domain.model.Pedido;
+
 public class EtiquetaPadrao implements FormatoEtiqueta {
     @Override
     public String gerar(Pedido pedido, double valorFrete) {

@@ -1,3 +1,6 @@
+package domain.frete;
+
+import domain.model.Entrega;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

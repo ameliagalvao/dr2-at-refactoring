@@ -1,3 +1,5 @@
+package domain.model;
+
 import java.util.UUID;
 
 public final class Entrega {

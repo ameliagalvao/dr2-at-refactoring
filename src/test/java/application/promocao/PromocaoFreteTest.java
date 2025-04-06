@@ -1,3 +1,8 @@
+package application.promocao;
+
+import domain.model.Entrega;
+import domain.model.Pedido;
+import domain.model.TipoFrete;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

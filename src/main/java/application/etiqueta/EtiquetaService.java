@@ -1,3 +1,9 @@
+package application.etiqueta;
+
+import domain.frete.CalculadoraFrete;
+import domain.model.Pedido;
+import exception.CalculoFreteException;
+
 import java.util.Objects;
 
 public class EtiquetaService {
