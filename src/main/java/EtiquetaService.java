@@ -1,28 +1,21 @@
+import java.util.Objects;
+
 public class EtiquetaService {
     private final CalculadoraFrete calculadoraFrete;
     private final PromocaoFrete promocaoFrete;
+    private final FormatoEtiqueta formatoEtiqueta;
 
-    public EtiquetaService(CalculadoraFrete calculadoraFrete, PromocaoFrete promocaoFrete) {
-        if (calculadoraFrete == null) {
-            throw new IllegalArgumentException("Calculadora de frete não pode ser nula");
-        }
-        this.calculadoraFrete = calculadoraFrete;
-        this.promocaoFrete = (promocaoFrete != null) ? promocaoFrete : new PromocaoFreteSemDesconto();
+    public EtiquetaService(CalculadoraFrete calculadoraFrete,
+                           PromocaoFrete promocaoFrete,
+                           FormatoEtiqueta formatoEtiqueta) {
+        this.calculadoraFrete = Objects.requireNonNull(calculadoraFrete);
+        this.promocaoFrete = promocaoFrete != null ? promocaoFrete : new PromocaoFreteSemDesconto();
+        this.formatoEtiqueta = Objects.requireNonNull(formatoEtiqueta);
     }
 
     public String gerarEtiqueta(Pedido pedido) {
         double valorFrete = calcularComPromocao(pedido);
-        Entrega entrega = pedido.getEntrega();
-        return "Destinatário: " + entrega.getDestinatario() +
-                "\nEndereço: " + entrega.getEndereco() +
-                "\nValor do Frete: R$" + valorFrete;
-    }
-
-    public String gerarResumo(Pedido pedido) {
-        double valorFrete = calcularComPromocao(pedido);
-        return "Pedido para " + pedido.getEntrega().getDestinatario() +
-                " com frete tipo " + pedido.getTipoFrete() +
-                " no valor de R$" + valorFrete;
+        return formatoEtiqueta.gerar(pedido, valorFrete);
     }
 
     private double calcularComPromocao(Pedido pedido) {
