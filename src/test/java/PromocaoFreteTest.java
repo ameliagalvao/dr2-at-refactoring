@@ -11,7 +11,7 @@ public class PromocaoFreteTest {
 
         PromocaoFrete promocao = new PromocaoFreteGratis();
         double resultado = promocao.aplicarDesconto(10.0, pedido);
-        assertEquals(0.0, resultado);
+        assertEquals(0.0, resultado, 0.0001); // ← corrigido aqui
     }
 
     @Test
@@ -21,6 +21,6 @@ public class PromocaoFreteTest {
 
         PromocaoFrete promocao = new PromocaoFreteGratis();
         double resultado = promocao.aplicarDesconto(10.0, pedido);
-        assertEquals(10.0, resultado);
+        assertEquals(10.0, resultado, 0.0001); // ← corrigido aqui
     }
 }
